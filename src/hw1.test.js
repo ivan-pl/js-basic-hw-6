@@ -29,7 +29,7 @@ describe("task2", () => {
     expect(task2("Benedict", "Cumberbatch")).toBe(19);
   });
 
-  it('returns 7 for task2("123", "456")', () => {
+  it('returns 7 for task2("123", "4567")', () => {
     expect(task2("123", "4567")).toBe(7);
   });
 });
