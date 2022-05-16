@@ -10,7 +10,10 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "max-len": ["error", { ignoreComments: true }],
+    "max-len": [
+      "error",
+      { ignoreComments: true, ignorePattern: "^\\s*it.*\\{$" },
+    ],
     "import/prefer-default-export": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
