@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
     "url": "https://github.com/ivan-pl/js-basic-hw-6/issues"
   },
   "homepage": "https://github.com/ivan-pl/js-basic-hw-6#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
 }
