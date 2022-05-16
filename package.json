@@ -17,6 +17,7 @@
   "homepage": "https://github.com/ivan-pl/js-basic-hw-6#readme",
   "description": "",
   "devDependencies": {
+    "@types/jest": "^27.5.1",
     "jest": "^28.1.0"
   }
 }
