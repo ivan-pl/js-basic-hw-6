@@ -30,3 +30,14 @@ export function task2() {
   const numMonth = prompt("Enter a number from 1 to 12:", 1);
   console.log(months[numMonth - 1]);
 }
+
+/**
+ * Задача: В переменных circle и square хранятся площади круга
+ * и квадрата соответственно. Написать программу,
+ * которая определяет, поместится ли круг в квадрат.
+ */
+export function task3(circle, square) {
+  const r = Math.sqrt(circle / Math.PI);
+  const a = Math.sqrt(square);
+  return r >= a;
+}

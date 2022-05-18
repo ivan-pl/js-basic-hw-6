@@ -1,4 +1,4 @@
-import { task1, task2 } from "./hw2";
+import { task1, task2, task3 } from "./hw2";
 
 describe("task1", () => {
   const spy = jest.spyOn(console, "log");
@@ -43,5 +43,23 @@ describe("task2", () => {
     jest.spyOn(globalThis, "prompt").mockImplementation(() => 12);
     task2();
     expect(spy).toBeCalledWith("Декабрь");
+  });
+});
+
+describe("task3", () => {
+  it("returns true for task3(50, 9)", () => {
+    expect(task3(50, 9)).toBeTruthy();
+  });
+
+  it("returns false for task3(50, 16)", () => {
+    expect(task3(50, 16)).toBeFalsy();
+  });
+
+  it("returns true for task3(50, 1)", () => {
+    expect(task3(50, 1)).toBeTruthy();
+  });
+
+  it("returns false for task3(1, 16)", () => {
+    expect(task3(1, 16)).toBeFalsy();
   });
 });
