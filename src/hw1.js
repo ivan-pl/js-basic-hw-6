@@ -13,8 +13,8 @@ export function task1(a, b) {
  * которая выведет в консоль суммарное количество символов в обоих
  * строках.
  */
-export function task2(firstName, lastName) {
-  return firstName.length + lastName.length;
+export function task2(firstStr, secondStr) {
+  return firstStr.length + secondStr.length;
 }
 
 /**
