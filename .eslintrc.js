@@ -14,6 +14,8 @@ module.exports = {
       "error",
       { ignoreComments: true, ignorePattern: "^\\s*it.*\\{$" },
     ],
+    "no-console": "off",
+    "no-alert": "off",
     "import/prefer-default-export": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
