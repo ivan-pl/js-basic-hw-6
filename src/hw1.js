@@ -16,3 +16,13 @@ export function task1(a, b) {
 export function task2(firstName, lastName) {
   return firstName.length + lastName.length;
 }
+
+/**
+ * Задача: написать программу, которая запрашивает у пользователя ввод
+ * трёхзначного числа, а потом выводит в консоль сумму цифр введённого
+ * числа.
+ */
+export function task3() {
+  const numStr = prompt("Enter a 3-digits number: ", 111);
+  return Array.from(numStr).reduce((prev, cur) => prev + +cur, 0);
+}

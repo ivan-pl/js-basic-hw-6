@@ -1,4 +1,4 @@
-import { task1, task2 } from "./hw1";
+import { task1, task2, task3 } from "./hw1";
 
 describe("task1", () => {
   it('calls console.log with "mul = 12; sum = 8" for "task1(2, 6)"', () => {
@@ -31,5 +31,22 @@ describe("task2", () => {
 
   it('returns 7 for task2("123", "4567")', () => {
     expect(task2("123", "4567")).toBe(7);
+  });
+});
+
+describe("task3", () => {
+  it('returns 6 when prompt gets "123"', () => {
+    jest.spyOn(globalThis, "prompt").mockImplementation(() => "123");
+    expect(task3()).toBe(6);
+  });
+
+  it('returns 3 when prompt gets "111"', () => {
+    jest.spyOn(globalThis, "prompt").mockImplementation(() => "111");
+    expect(task3()).toBe(3);
+  });
+
+  it('returns 3 when prompt gets "000"', () => {
+    jest.spyOn(globalThis, "prompt").mockImplementation(() => "000");
+    expect(task3()).toBe(0);
   });
 });
