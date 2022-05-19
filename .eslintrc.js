@@ -14,6 +14,7 @@ module.exports = {
       "error",
       { ignoreComments: true, ignorePattern: "^\\s*it.*\\{$" },
     ],
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
     "no-console": "off",
     "no-alert": "off",
     "import/prefer-default-export": "off",
