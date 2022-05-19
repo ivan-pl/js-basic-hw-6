@@ -1,20 +1,33 @@
-import { task1, task2 } from "./hw3";
+import { task1, task2, task3 } from "./hw3";
 
 describe("task1", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "log");
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
+  });
+
   const sum = (50 * (50 + 99)) / 2;
   it(`calls console.log with ${sum}`, () => {
-    console.log = jest.fn();
     task1();
     expect(console.log).toBeCalledWith(sum);
   });
 });
 
 describe("task2", () => {
-  console.log = jest.fn();
+  beforeAll(() => {
+    jest.spyOn(console, "log");
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
+  });
 
   it("calls console.log 9 times", () => {
     task2();
-    expect(console.log.mock.calls).toHaveLength(9);
+    expect(console.log).toBeCalledTimes(9);
   });
 
   it("calls console.log with 1 argument", () => {
@@ -43,5 +56,39 @@ describe("task2", () => {
     );
     task2();
     expect(console.log.mock.calls.map((item) => item[0])).toEqual(template);
+  });
+});
+
+describe("task3", () => {
+  beforeEach(() => {
+    jest.spyOn(console, "log");
+  });
+
+  afterAll(() => {
+    jest.resetAllMocks();
+  });
+
+  it("calls console.log with 1, 3, 5 for 6", () => {
+    jest.spyOn(globalThis, "prompt").mockImplementationOnce(() => 6);
+    task3();
+    expect(console.log).toBeCalledWith("1, 3, 5");
+  });
+
+  it("calls console.log with 1, 3, 5 for 7", () => {
+    jest.spyOn(globalThis, "prompt").mockImplementationOnce(() => 7);
+    task3();
+    expect(console.log).toBeCalledWith("1, 3, 5");
+  });
+
+  it("calls console.log with 1 for -5", () => {
+    jest.spyOn(globalThis, "prompt").mockImplementationOnce(() => -5);
+    task3();
+    expect(console.log).toBeCalledWith("1");
+  });
+
+  it("calls console.log with 1, 3, 5, 7, 9 for 10", () => {
+    jest.spyOn(globalThis, "prompt").mockImplementationOnce(() => 10);
+    task3();
+    expect(console.log).toBeCalledWith("1, 3, 5, 7, 9");
   });
 });

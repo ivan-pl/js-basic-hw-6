@@ -21,3 +21,26 @@ export function task2() {
     console.log(`7 x ${i} = ${7 * i}`);
   }
 }
+
+/**
+ * Запросить у пользователя ввод числа N. Вывести в
+ * консоль среднее арифметическое всех нечётных
+ * чисел от 1 до N.
+ */
+export function task3() {
+  const num = +prompt("Enter a number: ", 1);
+  const res = [1];
+
+  if (num <= 1) {
+    console.log("1");
+    return;
+  }
+
+  for (let i = 3; i < num; i++) {
+    if (i % 2 !== 0) {
+      res.push(i);
+    }
+  }
+
+  console.log(res.join(", "));
+}
