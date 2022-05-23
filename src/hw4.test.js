@@ -1,4 +1,4 @@
-import { task1, task2 } from "./hw4";
+import { task1, task2, task3 } from "./hw4";
 
 describe("task1", () => {
   beforeEach(() => {
@@ -44,5 +44,27 @@ describe("task2", () => {
 
   it('property "role" contains "admin"', () => {
     expect(task2(user).role).toBe("admin");
+  });
+});
+
+describe("task3", () => {
+  let admin = {
+    name: "John",
+    role: "admin",
+  };
+
+  afterEach(() => {
+    admin = {
+      name: "John",
+      role: "admin",
+    };
+  });
+
+  it("returns array", () => {
+    expect(task3(admin)).toBeInstanceOf(Array);
+  });
+
+  it('return ["John", "admin"]', () => {
+    expect(task3(admin)).toEqual(["John", "admin"]);
   });
 });

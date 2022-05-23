@@ -15,7 +15,17 @@ export function task1() {
  * Добавить новому объекту поле role со значением
  * ‘admin’.
  */
-export function task2(obj) {
-  const admin = { role: "admin", ...obj };
+export function task2(user) {
+  const admin = { role: "admin", ...user };
   return admin;
+}
+
+/**
+ * Записать все значения полей объекта admin в
+ * отдельные переменные. Имена переменных
+ * должны совпадать с названиями полей.
+ */
+export function task3(admin) {
+  const { name, role } = admin;
+  return [name, role];
 }
