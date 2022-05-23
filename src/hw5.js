@@ -15,3 +15,13 @@ export function task1(arr) {
 export function task2(arr) {
   return arr.map((x) => x * 2);
 }
+
+/**
+ * 3.*Найдите и выведите в консоль наибольший и
+ * наименьший элементы исходного массива.
+ */
+export function task3(arr) {
+  const maxNum = Math.max(...arr);
+  const minNum = Math.min(...arr);
+  console.log(maxNum, minNum);
+}
