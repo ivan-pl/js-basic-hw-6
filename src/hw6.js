@@ -17,3 +17,11 @@ export function diff(num1, num2) {
 export function isWord(str) {
   return /^\w+$/i.test(str);
 }
+
+/**
+ * *Напишите функцию pow(a, x), которая вернёт
+ * значение числа a, возведённого в степень x.
+ */
+export function pow(a, x) {
+  return a ** x;
+}

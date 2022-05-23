@@ -1,4 +1,4 @@
-import { diff, isWord } from "./hw6";
+import { diff, isWord, pow } from "./hw6";
 
 describe("diff", () => {
   it("returns 4 for 6, 10", () => {
@@ -29,5 +29,23 @@ describe("isWord", () => {
 
   it('returns false for ""', () => {
     expect(isWord("")).toBeFalsy();
+  });
+});
+
+describe("pow", () => {
+  it("returns 9 for (3, 2)", () => {
+    expect(pow(3, 2)).toBe(9);
+  });
+
+  it("returns 8 for (2, 3)", () => {
+    expect(pow(2, 3)).toBe(8);
+  });
+
+  it("returns 32 for (2, 5)", () => {
+    expect(pow(2, 5)).toBe(32);
+  });
+
+  it("returns 32 for (23, 0)", () => {
+    expect(pow(23, 0)).toBe(1);
   });
 });
