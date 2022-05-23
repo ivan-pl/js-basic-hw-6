@@ -1,4 +1,4 @@
-import { diff } from "./hw6";
+import { diff, isWord } from "./hw6";
 
 describe("diff", () => {
   it("returns 4 for 6, 10", () => {
@@ -11,5 +11,23 @@ describe("diff", () => {
 
   it("returns 4 for -3, -7", () => {
     expect(diff(-3, -7)).toBe(4);
+  });
+});
+
+describe("isWord", () => {
+  it('returns true for "someWord"', () => {
+    expect(isWord("someWord")).toBeTruthy();
+  });
+
+  it('returns false for "some word"', () => {
+    expect(isWord("some word")).toBeFalsy();
+  });
+
+  it('returns false for "someWord!"', () => {
+    expect(isWord("someWord!")).toBeFalsy();
+  });
+
+  it('returns false for ""', () => {
+    expect(isWord("")).toBeFalsy();
   });
 });
