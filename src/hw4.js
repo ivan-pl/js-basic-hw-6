@@ -11,13 +11,11 @@ export function task1() {
 }
 
 /**
- * Создайте объект user, содержащий поле name со
- * значением ‘John’.
  * 2.Создать копию объекта user с именем admin.
  * Добавить новому объекту поле role со значением
  * ‘admin’.
  */
 export function task2(obj) {
-  const admin = {role: "admin", ...obj};
+  const admin = { role: "admin", ...obj };
   return admin;
 }
