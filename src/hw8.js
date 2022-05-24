@@ -1,10 +1,3 @@
-/**
- * 3.*В двух переменных хранятся даты рождения двух
- * пользователей в формате ДД.ММ.ГГГГ. Написать
- * программу, которая определяет более молодого
- * пользователя
- */
-
 const DAYS = [
   "Sunday",
   "Monday",
@@ -40,4 +33,17 @@ export function task2() {
   const passedMinutes = hours * 60 + minutes;
 
   console.log(passedMinutes);
+}
+
+/**
+ * 3.*В двух переменных хранятся даты рождения двух
+ * пользователей в формате ДД.ММ.ГГГГ. Написать
+ * программу, которая определяет более молодого
+ * пользователя
+ */
+export function task3(birthday1, birthday2) {
+  const result =
+    birthday1 > birthday2 ? "First user is younger" : "Second user is younger";
+
+  alert(result);
 }
