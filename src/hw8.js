@@ -41,9 +41,17 @@ export function task2() {
  * программу, которая определяет более молодого
  * пользователя
  */
-export function task3(birthday1, birthday2) {
+export function task3(birthdayStr1, birthdayStr2) {
+  const [day1, month1, year1] = birthdayStr1.split(".");
+  const [day2, month2, year2] = birthdayStr2.split(".");
+
+  const birthdayDate1 = new Date(`${year1}-${month1}-${day1}`);
+  const birthdayDate2 = new Date(`${year2}-${month2}-${day2}`);
+
   const result =
-    birthday1 > birthday2 ? "First user is younger" : "Second user is younger";
+    birthdayDate1 > birthdayDate2
+      ? "First user is younger"
+      : "Second user is younger";
 
   alert(result);
 }

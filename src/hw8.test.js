@@ -48,18 +48,18 @@ describe("task3", () => {
     jest.spyOn(globalThis, "alert").mockReturnThis();
   });
 
-  it('returns "Second user is younger" for task3(new Date(1994, 5, 1), new Date(2001, 2, 4))', () => {
-    task3(new Date(1994, 5, 1), new Date(2001, 2, 4));
+  it('returns "Second user is younger" for task3("01.05.1994", "04.02.2001")', () => {
+    task3("01.05.1994", "04.02.2001");
     expect(alert).toBeCalledWith("Second user is younger");
   });
 
-  it('returns "First user is younger" for task3(new Date(2001, 2, 4), new Date(1994, 5, 1))', () => {
-    task3(new Date(2001, 2, 4), new Date(1994, 5, 1));
+  it('returns "First user is younger" for task3("04.02.2001", "01.05.1994")', () => {
+    task3("04.02.2001", "01.05.1994");
     expect(alert).toBeCalledWith("First user is younger");
   });
 
-  it('returns "Second user is younger" for task3(new Date(2001, 2, 3), new Date(2001, 2, 4))', () => {
-    task3(new Date(2001, 2, 3), new Date(2001, 2, 4));
+  it('returns "Second user is younger" for task3("03.02.2001", "04.02.2001")', () => {
+    task3("03.02.2001", "04.02.2001");
     expect(alert).toBeCalledWith("Second user is younger");
   });
 });
