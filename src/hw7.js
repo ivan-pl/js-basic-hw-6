@@ -16,10 +16,19 @@ function inputEvent(e) {
   button.hidden = !e.target.value;
 }
 
+function clickButton() {
+  const container = document.querySelector("article");
+  const newParagraph = document.createElement("p");
+  newParagraph.innerText = document.querySelector("input").value;
+  container.append(newParagraph);
+}
+
 export function setBehavior() {
   const button = document.querySelector("button");
   const input = document.querySelector("input");
 
   button.hidden = true;
+
   input.addEventListener("input", inputEvent);
+  button.addEventListener("click", clickButton);
 }

@@ -46,3 +46,31 @@ describe("task1", () => {
     expect(button.hidden).toBe(true);
   });
 });
+
+describe("task2", () => {
+  beforeEach(() => {
+    document.body.innerHTML = html;
+    setBehavior();
+  });
+
+  it("adds new paragraph onclick", () => {
+    const button = document.querySelector("button");
+    const curCountP = document.querySelectorAll("p").length;
+    button.click();
+
+    expect(document.querySelectorAll("p")).toHaveLength(curCountP + 1);
+  });
+
+  it("paragraphs text matches input field", () => {
+    const button = document.querySelector("button");
+    const input = document.querySelector("input");
+    const inputValueTemplate = "some input text";
+
+    input.value = inputValueTemplate;
+    button.click();
+    const paragraphs = document.querySelectorAll("p");
+    const lastParagraph = paragraphs[paragraphs.length - 1];
+
+    expect(lastParagraph.innerText).toBe(inputValueTemplate);
+  });
+});
