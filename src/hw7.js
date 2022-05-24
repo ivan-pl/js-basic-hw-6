@@ -16,11 +16,21 @@ function inputEvent(e) {
   button.hidden = !e.target.value;
 }
 
+function removeRedundantParagraph() {
+  const paragraphs = document.querySelectorAll("p");
+
+  if (paragraphs.length > 5) {
+    paragraphs[0].remove();
+  }
+}
+
 function clickButton() {
   const container = document.querySelector("article");
   const newParagraph = document.createElement("p");
+
   newParagraph.innerText = document.querySelector("input").value;
   container.append(newParagraph);
+  removeRedundantParagraph();
 }
 
 export function setBehavior() {

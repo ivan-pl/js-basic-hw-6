@@ -74,3 +74,39 @@ describe("task2", () => {
     expect(lastParagraph.innerText).toBe(inputValueTemplate);
   });
 });
+
+describe("task3", () => {
+  beforeEach(() => {
+    document.body.innerHTML = html;
+    setBehavior();
+  });
+
+  function addParagraph(paragraphInnerText = "New paragraph") {
+    const input = document.querySelector("input");
+    const button = document.querySelector("button");
+
+    input.value = paragraphInnerText;
+    button.click();
+  }
+
+  it("max number of paragraphs is 5", () => {
+    for (let i = 0; i < 10; i++) {
+      addParagraph();
+    }
+
+    const paragraphsCount = document.querySelectorAll("p").length;
+    expect(paragraphsCount).toBe(5);
+  });
+
+  it("remove first paragraph if their number > 5", () => {
+    for (let i = 0; i < 2; i++) {
+      addParagraph();
+    }
+    let paragraphs = document.querySelectorAll("p");
+    const removingParagraph = paragraphs[0];
+
+    addParagraph();
+    paragraphs = document.querySelectorAll("p");
+    expect([].includes.call(paragraphs, removingParagraph)).toBe(false);
+  });
+});
