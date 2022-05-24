@@ -1,4 +1,4 @@
-import { task1 } from "./hw8";
+import { task1, task2 } from "./hw8";
 
 describe("task1", () => {
   beforeAll(() => {
@@ -21,5 +21,31 @@ describe("task1", () => {
 
     task1();
     expect(alert).toBeCalledWith("Wednesday");
+  });
+});
+
+describe("task2", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "log");
+  });
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
+  it("returns 845 for time = 14:05", () => {
+    jest
+      .spyOn(Date, "now")
+      .mockImplementation(() => new Date("2020-01-01T14:05").getTime());
+    task2();
+    expect(console.log).toBeCalledWith(845);
+  });
+
+  it("returns 214 for time = 03:34", () => {
+    jest
+      .spyOn(Date, "now")
+      .mockImplementation(() => new Date("2022-02-10T03:34").getTime());
+    task2();
+    expect(console.log).toBeCalledWith(214);
   });
 });
