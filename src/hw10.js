@@ -10,3 +10,7 @@
 export function isDate(str) {
   return /^\d{2}\.\d{2}.\d{4}$/.test(str);
 }
+
+export function isEmail(str) {
+  return /^[0-9a-zA-Z-._]+@[0-9a-zA-Z]+\.[a-z]+/.test(str);
+}

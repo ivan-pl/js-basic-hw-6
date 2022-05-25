@@ -1,4 +1,4 @@
-import { isDate } from "./hw10";
+import { isDate, isEmail } from "./hw10";
 
 describe("task1", () => {
   it("returns true for 12.11.2012", () => {
@@ -31,5 +31,27 @@ describe("task1", () => {
 
   it("returns false for asd.11-2012", () => {
     expect(isDate("asd.11-2012")).toBe(false);
+  });
+});
+
+describe("task2", () => {
+  it("returns true for any@email.gom", () => {
+    expect(isEmail("any@email.gom")).toBe(true);
+  });
+
+  it("returns true for one-more@email.ru", () => {
+    expect(isEmail("one-more@email.ru")).toBe(true);
+  });
+
+  it("returns false for someString", () => {
+    expect(isEmail("someString")).toBe(false);
+  });
+
+  it("returns false for site.ru", () => {
+    expect(isEmail("site.ru")).toBe(false);
+  });
+
+  it("returns false for 2@mail", () => {
+    expect(isEmail("2@mail")).toBe(false);
   });
 });
