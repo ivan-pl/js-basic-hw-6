@@ -14,3 +14,7 @@ export function isDate(str) {
 export function isEmail(str) {
   return /^[0-9a-zA-Z-._]+@[0-9a-zA-Z]+\.[a-z]+/.test(str);
 }
+
+export function isMobileNumber(str) {
+  return /^(\+7|8)\(?\d{3}\)?\d{3}-?\d{2}-?\d{2}$/.test(str);
+}
