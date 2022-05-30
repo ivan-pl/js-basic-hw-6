@@ -15,8 +15,7 @@ const DAYS = [
  */
 export function task1() {
   const inputStrData = prompt("Enter a date in format dd.mm.yyyy: ");
-  const [day, month, year] = inputStrData.split(".");
-  const date = new Date(`${year}-${month}-${day}`);
+  const date = new Date(inputStrData);
 
   alert(DAYS[date.getDay()]);
 }
@@ -27,7 +26,7 @@ export function task1() {
  * дня.
  */
 export function task2() {
-  const currentDate = new Date(Date.now());
+  const currentDate = new Date();
   const hours = currentDate.getHours();
   const minutes = currentDate.getMinutes();
   const passedMinutes = hours * 60 + minutes;
@@ -42,11 +41,8 @@ export function task2() {
  * пользователя
  */
 export function task3(birthdayStr1, birthdayStr2) {
-  const [day1, month1, year1] = birthdayStr1.split(".");
-  const [day2, month2, year2] = birthdayStr2.split(".");
-
-  const birthdayDate1 = new Date(`${year1}-${month1}-${day1}`);
-  const birthdayDate2 = new Date(`${year2}-${month2}-${day2}`);
+  const birthdayDate1 = new Date(birthdayStr1);
+  const birthdayDate2 = new Date(birthdayStr2);
 
   const result =
     birthdayDate1 > birthdayDate2
