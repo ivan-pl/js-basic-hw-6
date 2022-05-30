@@ -1,5 +1,6 @@
 name: PR Sanity Check
 
+on: pull_request
 
 jobs:
   lint:
